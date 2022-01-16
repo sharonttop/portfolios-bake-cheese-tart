@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入bootstrap4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <!-- 引入ScrollReveal-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+        <style>
+            .bgc{
+                /* width: 100%; */
+                /* height: 100%; */
+                position: relative;
+            }
+            .bgc-warp{
+                /* position: relative; */
+                clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 75%);
+            }
+            .bgc-path{
+                width: 100%;
+                position: absolute;
+                /* width: 700px; */
+                -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 70%);
+                clip-path: polygon(0 0, 0 106.5%, 50% 0);
+            }
+            .yellow-bgc{
+                width: 100%;
+                height: 100%;
+            }
+            
+            .bgc-tart{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .navbar{
+                /* 漢堡 */
+                background-color: black;
+                /* width: 100%; */
+                position: absolute;
+                z-index: 4;
+                right: 0;
+            }
+            .bar{
+                visibility: hidden;
+                position: absolute;
+                padding-top: 7%;
+                padding-right: 15%;
+                padding-bottom: 10%;
+                padding-left:10%;
+                right: 0;
+                background-color:rgba(0, 0, 0, 0.515);
+            }
+            .bar>ul>li{
+                margin:5px;
+            }
+            .bar>ul>li>a{
+                color:#ffff;
+                text-decoration:none;
+            }
+
+            .logo{
+                width: 7.15278vw;
+                position:absolute;
+                z-index: 999;
+                left: 70px;
+                top: 70px;
+                
+            }
+            .logo>img{
+                width: 100%;
+                height: 100%;
+            }
+
+
+            /* 漢堡變叉叉特效 */
+            #icon {
+            width: 50px;
+            /* height: 50px; */
+            cursor: pointer;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            }
+            path {
+            fill: none;
+            -webkit-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+            -moz-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+            -o-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+            -ms-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+            transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+            stroke-width: 40px;
+            stroke-linecap: round;
+            stroke: #ffff;
+            stroke-dashoffset: 0px;
+            }
+            path#top,
+            path#bottom {
+            stroke-dasharray: 240px 950px;
+            }
+            path#middle {
+            stroke-dasharray: 240px 240px;
+            }
+            .cross path#top,
+            .cross path#bottom {
+            stroke-dashoffset: -650px;
+            stroke-dashoffset: -650px;
+            }
+            .cross path#middle {
+            stroke-dashoffset: -115px;
+            stroke-dasharray: 1px 220px;
+            }
+
+            /*漢堡變叉叉特效-結束  */
+            /* 黑條 */
+            .black-line-list{
+                position:absolute;
+                top:80vh;
+            }
+            .black-line{
+                height: 90px;
+                width: 8px;
+               
+                margin-left: 8px;
+                background-color:rgb(0, 0, 0);
+            }
+            .slide-ad{
+                height: 90px;
+                width:auto;
+                /* padding-right: 150px; */
+            }
+            .slide-ad-p{
+                margin-left: 0px;
+                width:150px;
+                color:#ffff;
+            }
+            .slide-ad-p>p{
+                font-size: .7rem;
+                color:#ffff;
+                margin: 5px;
+                font-family: 'Zen Kaku Gothic New', sans-serif;
+            }
+            .ad-img>img{
+                width: 100%;
+                height: 100%;
+            }
+            /* 第二頁ˋ蛋塔 */
+            .bgc2{
+                /* width: 100%;
+                height: 100%; */
+                position: relative;
+            }
+            .bgc-path2{
+                top:150vh;
+                width: 100%;
+                position: absolute;
+                /* width: 700px; */
+                /* -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 70%); */
+                /* clip-path: polygon(0 0, 0 106.5%, 50% 0); */
+                clip-path: polygon(0 0, 19% 5.8%, 47% 84.95%, 0% 100%);
+
+            }
+            .yellow-bgc2{
+                width: 100%;
+                height: 100%;
+            }
+            .bgc2-warp{
+                top:150vh;
+                position: absolute;
+                /* -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 30%, 0 0);
+                clip-path: polygon(0 100%, 100% 100%, 100% 30%, 0 0); */
+                clip-path: polygon(0 0, 100% 30%, 100% 68%, 0% 100%);
+                
+            }
+            .bgc2-warp>img{
+                width: 100%;
+                height: 100%;
+                /* position: relative; */
+            } 
+            .tar-title{
+                top: 210vh;
+                left: 15%;
+                position: absolute;
+
+            }
+            .tar-title>p{
+               
+                font-family: 'Zen Kaku Gothic New', sans-serif;
+            }
+            .tar-title-ki{
+                letter-spacing:-2px;
+                font-size: 2rem;
+                margin-bottom: 35px;
+                
+            }
+            .tar-title-saku{
+                letter-spacing:-1px;
+                font-size: 1.5rem;
+                margin-bottom: 35px;
+            }
+            .tar-description{
+                font-size: 1rem;
+            }
+        </style>
+</head>
+<body>
+
+
+    <div class="bgc d-flex flex-column">
+        <div class="bgc-warp">
+            <img class="bgc-tart justify-content-center" src="./imgs/hero_img.jpg" alt="">
+        </div>
+        <div class="bgc-path">
+            <div class="yellow-bgc">
+                <img class="yellow-bgc" src="./imgs/hero_img_m.jpg" alt="">
+            </div>
+        </div>
+        <div class="logo">
+            <img src="./imgs/logo.svg" alt="">
+        </div>
+        <!-- 黑條廣告 -->
+        <div class="black-line-list d-flex align-items-center">
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line slide-ad ad-img">
+                <img src="./imgs/bct_tatins.jpg" alt="">
+            </div>
+            <div class="black-line slide-ad-p">
+                <p>フランス産チョコレートを使用した爽やかな香りを楽しめる</p>
+            </div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+            <div class="black-line"></div>
+        </div>
+        <!-- 漢堡變叉叉特效 -->
+        <div class="navbar">
+            <svg id="icon" viewBox="0 0 800 600">
+            <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path>
+            <path d="M300,320 L540,320" id="middle"></path>
+            <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
+            </svg>
+        </div>
+        <div class="bar d-flex flex-column">
+            <ul class="list-unstyled">
+                <li><a href="#">TOP</a></li>
+                <li><a href="#">BAKE CHEESE TART</a></li>
+                <li><a href="#">ESSENCE</a></li>
+                <li><a href="#">PRICE</a></li>
+                <li><a href="#">HOW TO EAT</a></li>
+                <li><a href="#">PHILOSOPHY</a></li>
+                <li><a href="#">SHOPS</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">CONTACT - FAQ</a></li>
+            </ul>
+        </div>      
+        <!-- 漢堡變叉叉特效-結束  -->
+        <div class="bgc2 bgc2-warp">
+            <img class="bgc-tart justify-content-center" src="./imgs/bct_img.jpg" alt="">
+        </div>
+        <div class="bgc-path2">
+            <div class="yellow-bgc2">
+                <img class="yellow-bgc" src="./imgs/bct_img_m.jpg" alt="">
+            </div>
+        </div>
+        <div class="tar-title">
+            <p class="tar-title-ki">記憶に残る、ひとくち</p>
+            <p class="tar-title-saku">サクッ、フワッ。</p>
+            <p class="tar-description"> こだわったのは、“焼きたて”。</p>
+            <p class="tar-description">ひとつひとつにおいしさと想いを込めた</p>
+            <p class="tar-description">北海道生まれのチーズタルト。</p>
+        </div>
+    </div>
+    <!-- <div class="bgc2 d-flex">
+        <div class="bgc2-warp">
+            <img class="bgc-tart justify-content-center" src="./imgs/bct_img.jpg" alt="">
+        </div>
+        <div class="bgc-path">
+            <div class="yellow-bgc">
+                <img class="yellow-bgc" src="./imgs/bct_img_m.jpg" alt="">
+            </div>
+        </div>
+    </div> -->
+
+    <script src="./jquery/jquery-3.6.0.js"></script>
+
+    <script>
+        ScrollReveal().reveal('.bgc', 
+        { delay: 1000, distance:'0px',scale: 1.5,origin:'right', duration: 2500});
+
+        ScrollReveal().reveal('.bgc-path', 
+        { delay: 2000, distance:'2000px',origin:'bottom'});
+        // 慢慢跳出來
+
+        // 黑條
+        ScrollReveal().reveal('.black-line', { delay: 2000, interval: 180, move:'300px' });
+
+        // 漢堡變叉叉特效
+            $(".navbar").click(function() {
+                // clearInterval(i);
+                $(".navbar").toggleClass("cross");
+                $(".bar").toggleClass("visible");
+                
+            });
+
+        // 漢堡結束
+        //第二頁
+        ScrollReveal().reveal('.bgc2', 
+        { delay: 1000, distance:'0px',scale: 1.5,origin:'right', duration: 2500});
+        ScrollReveal().reveal('.bgc-path2', 
+        { delay: 2000, distance:'2000px',origin:'top'});
+        
+        ScrollReveal().reveal('.tar-title-ki', 
+        { delay: 1000, distance:'2000px',origin:'right',duration: 1500});
+        ScrollReveal().reveal('.tar-title-saku', 
+        { delay: 1500, distance:'2000px',origin:'right',duration: 1500});
+        ScrollReveal().reveal('.tar-description', 
+        { delay: 1800, distance:'2000px',origin:'bottom',duration: 1500});
+
+
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
