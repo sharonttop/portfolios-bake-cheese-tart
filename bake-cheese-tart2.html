@@ -57,6 +57,7 @@
                 padding-left:10%;
                 right: 0;
                 background-color:rgba(0, 0, 0, 0.515);
+                z-index: 3;
             }
             .bar>ul>li{
                 margin:5px;
@@ -133,6 +134,7 @@
                 margin-left: 8px;
                 background-color:rgb(0, 0, 0);
             }
+
             .slide-ad{
                 height: 90px;
                 width:auto;
@@ -153,6 +155,44 @@
                 width: 100%;
                 height: 100%;
             }
+            @media (max-width: 576px) { 
+            .logo {
+                width: 10.15278vw;
+                position: absolute;
+                z-index: 999;
+                left: 43px;
+                top: 67px;
+            }
+            .black-line-list{
+                position:absolute;
+                top:28vh;
+            }     
+            .black-line {
+                height: 48px;
+                width: 4px;
+                margin-left: 5px;
+                background-color: rgb(0, 0, 0);
+            }
+            .slide-ad{
+                height: 48px;
+                width:auto;
+                /* padding-right: 150px; */
+            }
+            .slide-ad-p{
+                margin-left: 0px;
+                width:100px;
+                color:#ffff;
+            }
+            .slide-ad-p>p{
+                font-size: .7rem;
+                color: #ffff;
+                margin: 5px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+            }
+            }
             /* 第二頁ˋ蛋塔 */
             .bgc2{
                 /* width: 100%;
@@ -160,7 +200,8 @@
                 position: relative;
             }
             .bgc-path2{
-                top:150vh;
+                /* top:150vh; */
+                top: 0;
                 width: 100%;
                 position: absolute;
                 /* width: 700px; */
@@ -174,7 +215,8 @@
                 height: 100%;
             }
             .bgc2-warp{
-                top:150vh;
+                /* top:150vh; */
+                top: 0;
                 position: absolute;
                 /* -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 30%, 0 0);
                 clip-path: polygon(0 100%, 100% 100%, 100% 30%, 0 0); */
@@ -187,7 +229,7 @@
                 /* position: relative; */
             } 
             .tar-title{
-                top: 210vh;
+                top: 30%;
                 left: 15%;
                 position: absolute;
 
@@ -209,6 +251,40 @@
             }
             .tar-description{
                 font-size: 1rem;
+            }
+            @media (max-width: 576px) { 
+             .tar-title-ki{
+                letter-spacing: 1px;
+                font-size: 1rem;
+                margin-bottom: 15px;
+                
+            }
+            .tar-title-saku{
+                letter-spacing:0px;
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+            .tar-description{
+                font-size: .5rem;
+            }
+            .tar-title{
+                top: 24%;
+                left: 11%;
+                position: absolute;
+
+            }
+            }
+
+
+            .page2{
+                width: 100%;
+                height: 0;
+                padding-top: 100%;
+                margin-top:-20%;
+            }
+
+            .page2 .bgc2-warp{
+                width: 100%;
             }
         </style>
 </head>
@@ -280,21 +356,26 @@
             </ul>
         </div>      
         <!-- 漢堡變叉叉特效-結束  -->
-        <div class="bgc2 bgc2-warp">
-            <img class="bgc-tart justify-content-center" src="./imgs/bct_img.jpg" alt="">
-        </div>
-        <div class="bgc-path2">
-            <div class="yellow-bgc2">
-                <img class="yellow-bgc" src="./imgs/bct_img_m.jpg" alt="">
+        <div class="bgc d-flex flex-column page2">
+            <div class="bgc2 bgc2-warp">
+                <img class="bgc-tart justify-content-center" src="./imgs/bct_img.jpg" alt="">
             </div>
+            <div class="bgc-path2">
+                <div class="yellow-bgc2">
+                    <img class="yellow-bgc" src="./imgs/bct_img_m.jpg" alt="">
+                </div>
+            </div>
+            <div class="tar-title">
+                <p class="tar-title-ki">記憶に残る、ひとくち</p>
+                <p class="tar-title-saku">サクッ、フワッ。</p>
+                <p class="tar-description"> こだわったのは、“焼きたて”。</p>
+                <p class="tar-description">ひとつひとつにおいしさと想いを込めた</p>
+                <p class="tar-description">北海道生まれのチーズタルト。</p>
+            </div>
+
         </div>
-        <div class="tar-title">
-            <p class="tar-title-ki">記憶に残る、ひとくち</p>
-            <p class="tar-title-saku">サクッ、フワッ。</p>
-            <p class="tar-description"> こだわったのは、“焼きたて”。</p>
-            <p class="tar-description">ひとつひとつにおいしさと想いを込めた</p>
-            <p class="tar-description">北海道生まれのチーズタルト。</p>
-        </div>
+    
+
     </div>
     <!-- <div class="bgc2 d-flex">
         <div class="bgc2-warp">
