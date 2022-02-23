@@ -337,6 +337,12 @@
             .news-page-btn:hover{
                 opacity: .7;
             }
+            .text-box>p{
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+            }
         </style>
 </head>
 <body>
@@ -500,11 +506,11 @@
         {distance:'0px',scale: 1.5,origin:'right', duration: 1500});
 
         ScrollReveal().reveal('.bgc-path', 
-        { delay: 1000, distance:'100px',origin:'bottom', duration: 500});
+        { delay: 800, distance:'100px',origin:'bottom', duration: 500});
         // 慢慢跳出來
 
         // 黑條
-        ScrollReveal().reveal('.black-line', { delay: 800, interval: 90, move:'200px' });
+        ScrollReveal().reveal('.black-line', {interval: 90, move:'200px' });
 
         // 漢堡變叉叉特效
             $(".navbar").click(function() {
