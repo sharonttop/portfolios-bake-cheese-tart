@@ -497,18 +497,17 @@
 
     <script>
         ScrollReveal().reveal('.bgc', 
-        { delay: 1000, distance:'0px',scale: 1.5,origin:'right', duration: 2500});
+        {distance:'0px',scale: 1.5,origin:'right', duration: 1500});
 
         ScrollReveal().reveal('.bgc-path', 
-        { delay: 2000, distance:'2000px',origin:'bottom'});
+        { delay: 1000, distance:'100px',origin:'bottom', duration: 500});
         // 慢慢跳出來
 
         // 黑條
-        ScrollReveal().reveal('.black-line', { delay: 2000, interval: 180, move:'300px' });
+        ScrollReveal().reveal('.black-line', { delay: 1000, interval: 100, move:'200px' });
 
         // 漢堡變叉叉特效
             $(".navbar").click(function() {
-                // clearInterval(i);
                 $(".navbar").toggleClass("cross");
                 $(".bar").toggleClass("visible");
                 
@@ -517,16 +516,16 @@
         // 漢堡結束
         //第二頁
         ScrollReveal().reveal('.bgc2', 
-        { delay: 1000, distance:'0px',scale: 1.5,origin:'right', duration: 2500});
+        { distance:'0px',scale: 1.5,origin:'right', duration: 1100});
         ScrollReveal().reveal('.bgc-path2', 
-        { delay: 2000, distance:'2000px',origin:'top'});
+        { delay: 1500, distance:'100px',origin:'top'});
         
         ScrollReveal().reveal('.tar-title-ki', 
-        { delay: 1000, distance:'2000px',origin:'right',duration: 1500});
+        { delay: 500, distance:'1000px',origin:'right',duration: 1000});
         ScrollReveal().reveal('.tar-title-saku', 
-        { delay: 1500, distance:'2000px',origin:'right',duration: 1500});
+        { delay: 1000, distance:'1000px',origin:'right',duration: 1000});
         ScrollReveal().reveal('.tar-description', 
-        { delay: 1800, distance:'2000px',origin:'bottom',duration: 1500});
+        { delay: 1000, distance:'1000px',origin:'bottom',duration: 1300});
 
 
     </script>
