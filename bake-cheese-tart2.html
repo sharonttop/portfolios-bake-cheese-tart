@@ -5,18 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bake-cheese-tart</title>
+    <!-- 引入ScrollReveal-->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <!-- 引入bootstrap4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        <!-- 引入ScrollReveal-->
-        <script src="https://unpkg.com/scrollreveal"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
  
         <style>
             .bgc{
-                /* width: 100%; */
-                /* height: 100%; */
                 position: relative;
             }
             .bgc-warp{
@@ -196,18 +194,12 @@
             }
             /* 第二頁ˋ蛋塔 */
             .bgc2{
-                /* width: 100%;
-                height: 100%; */
                 position: relative;
             }
             .bgc-path2{
-                /* top:150vh; */
                 top: 0;
                 width: 100%;
                 position: absolute;
-                /* width: 700px; */
-                /* -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 70%); */
-                /* clip-path: polygon(0 0, 0 106.5%, 50% 0); */
                 clip-path: polygon(0 0, 19% 5.8%, 47% 84.95%, 0% 100%);
 
             }
@@ -216,18 +208,14 @@
                 height: 100%;
             }
             .bgc2-warp{
-                /* top:150vh; */
                 top: 0;
                 position: absolute;
-                /* -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 30%, 0 0);
-                clip-path: polygon(0 100%, 100% 100%, 100% 30%, 0 0); */
                 clip-path: polygon(0 0, 100% 30%, 100% 68%, 0% 100%);
                 
             }
             .bgc2-warp>img{
                 width: 100%;
                 height: 100%;
-                /* position: relative; */
             } 
             .tar-title{
                 top: 30%;
@@ -530,7 +518,7 @@
         // 漢堡結束
         //第二頁
         ScrollReveal().reveal('.bgc2', 
-        { distance:'0px',scale: 1.5,origin:'right', duration: 1100});
+        { scale: 1.5,origin:'right', duration: 1100});
         ScrollReveal().reveal('.bgc-path2', 
         { delay: 1000, distance:'100px',origin:'top', duration: 1200});
         
